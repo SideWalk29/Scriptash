@@ -5,12 +5,25 @@ Create an user or multi using the function
                                
                                (WhileLoop) 
                              
-                             (adduser/useradd) 
+                             (AddUser/UserAdd) 
                           
-                          dependss what you choosed 
-Delete an user or multi using the function 
 
-(WhileLoop) + (deluser/userdel) dependes what you choosed too
+
+Delete an user or MultiUsers
+
+                              (WhileLoop)
+            
+                           (DelUser/UserDel)
+
+
+
 Change the owner of a file
+
+                               (cHoWn)
+
+
+
 Change the user password 
+                                  
+                              (PasSwD)
 shutdown now the System
