@@ -6,7 +6,6 @@
 
 
 
-
 # Scriptash
                       Users and Groups / Funcional :
 
@@ -37,7 +36,8 @@ Change the file's owner
 
 Change the user password 
                                   
-                              (PasSwD)
+                                  
+                               (PaSswd)
+                                  
+                                  
 Shutdowon the system
-
-
