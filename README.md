@@ -30,3 +30,7 @@ Change the user password
                                   
                               (PasSwD)
 shutdown now the System
+
+![Screenshot_2022-06-02_09-19-19](https://user-images.githubusercontent.com/68873576/171575357-a393d6f2-e361-423f-8974-fca2ff09deac.png)
+
+
