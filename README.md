@@ -40,4 +40,4 @@ Change the user password
                                (PaSswd)
                                   
                                   
-Shutdowon the system
+Shutdown the system
