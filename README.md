@@ -1,7 +1,7 @@
 
 
-![Screenshot_2022-06-02_09-19-19](https://user-images.githubusercontent.com/68873576/171575614-db70b60c-79ce-4344-bd48-03294b8f2c52.png)
 
+![Screenshot_2022-06-02_09-24-07](https://user-images.githubusercontent.com/68873576/171576173-e8486db7-8bf6-4972-9106-02bc451d488d.png)
 
 
 
