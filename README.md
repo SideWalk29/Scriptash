@@ -18,7 +18,7 @@ Create an user or multi using the function
 
 
 
-OPen an app that you already you had
+Open an app that you already you had
 
 
 Delete an user or MultiUsers
