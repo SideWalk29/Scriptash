@@ -18,15 +18,15 @@ if [[ $EUID -ne 0 ]]; then
   exit
 fi
 
-echo    "========================================"
+echo    "========================================="
 printf "| 1.- Download a software                |\n"
-printf "| 2.- Create an user or multi user       |\n"
+printf "| 2.- Create a new user or multi users   |\n"
 printf "| 3.- Change the user's password         |\n"
-printf "| 4.- Change the ower of the file        |\n"
+printf "| 4.- Change the owner of the file       |\n"
 printf "| 5.- Open an app that you have already  |\n"
 printf "| 6.- Shutdown the system                |\n"
-printf "| 7.- Exit the script                    |"
-echo    "========================================"
+printf "| 7.- Exit the script                    |\n"
+echo    "========================================="
 read menu
 
 if [[ $menu -eq "1" ]]; then
@@ -119,8 +119,11 @@ elif [[ $menu -eq "5" ]]; then
  sudo $APP
 
 elif [[ $menu -eq "6" ]]; then
- echo PLease wait && sleep 3 && shutdown now
+ echo Turning off && sleep 3 && shutdown now
 
 elif [[ $menu -eq "7" ]]; then
- echo Thank you 4 using our script... && sleep 3 && clear && exit
+ clear
+ figlet -f slant Thank you 4 using our script && sleep 3 && clear
+else
+ echo You have introduced invalid valor && sleep 3 && sudo bash UsersFunction.sh
 fi
