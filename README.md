@@ -1,43 +1,49 @@
 
 
-![DONE](https://user-images.githubusercontent.com/68873576/171582097-c41e62bc-4384-47d4-b4e9-a4d527dee1e9.png)
 
+
+![s](https://user-images.githubusercontent.com/68873576/174685593-a76e06ea-81a8-46bb-a86b-bfebf76fdc59.png)
 
 
 
 
 # Scriptash
-                      Users and Groups / Funcional :
+                                                                              : Users and Groups / Funcional
 
 Create an user or multi using the function 
                                
-                               (WhileLoop) 
+                               (WHILELOOP) 
                              
-                             (AddUser/UserAdd) 
+                             (ADDUSER/USERADD) 
 
 
+Change a Username           
+                       
+                               (USERMOD)
+Change user Shell
+                                
+                               (USERMOD)
+Change user Primary Group
+   
+                               (USERMOD)
+Change user Secondary Group
 
-Open an app that you already had
-
+                               (USERMOD)
 
 Delete an user or MultiUsers
 
-                              (WhileLoop)
+                              (WHILELOOP)
             
-                           (DelUser/UserDel)
-
-
+                           (DELUSER/USERDEL)
 
 Change the file's owner
 
-                               (cHoWn)
+                               (CHOWN)
 
+Change the user's password 
+                                  
+                               (PASSWD)
+                               
+Locking un Unlocking user's accounts
 
-
-Change the user password 
-                                  
-                                  
-                               (PaSswd)
-                                  
-                                  
-Shutdown the system
+                              (USERMOD)
