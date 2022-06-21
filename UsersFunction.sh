@@ -13,11 +13,15 @@ function multi_user () {
  echo  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 }
 
-function Control_accounts() {
+function Control_accounts () {
  echo ··································
  printf "9.1.- Unlock User account \n"
  printf "9.2.- Lock User account   \n"
  echo ..................................
+}
+
+function account () {
+ sleep 3 && clear
 }
 
 if [[ $EUID -ne 0 ]]; then
@@ -47,16 +51,17 @@ if [[ $menu -eq "1" ]]; then
  echo the app has been downloaded successfuly
 
 elif [[ $menu -eq "2" ]]; then
- printf "2.1- Do you want to create an user\n"
- printf "2.2- Do you wannt to create multi user\n"
- echo
+ printf "2.1- create an user\n"
+ printf "2.2- create multi users\n"
+ echo ....
  read Menu
-
+ echo ....
+ 
  if [[ $Menu == "2.1" ]]; then
   clear
   one_user
   echo
-  read -p "Select between those 2 options : " MEnu
+  read -p "Select between those 2 options (2.1.#): " MEnu
   echo
 
   if [[ $MEnu == "2.1.1" ]]; then
@@ -80,7 +85,7 @@ elif [[ $menu -eq "2" ]]; then
   clear
   multi_user
   echo
-  read -p "Select between those 2 options : " MENU
+  read -p "Select between those 2 options (2.2.#): " MENU
  fi
 
   if [[ $MENU == "2.2.1" ]]; then
@@ -89,7 +94,7 @@ elif [[ $menu -eq "2" ]]; then
    read -p "Give the names 4 the new Users: " Users
    echo ½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½½
    read -p "How many users Do you wanna create : " Number
-   echo it will start right now
+   echo it will start right now...
 
    I=0
    while [ $I -le $Number ]
@@ -151,19 +156,22 @@ elif [[ $menu -eq "8" ]]; then
 
 
 elif [[ $menu -eq "9" ]]; then
+ clear
  Control_accounts
  read -p "Select which one (9.#) : " CN
-
- if [[ $CN -eq "9.1" ]]; then
- read -p "Write the name of the user " USER
- sudo usermod -U $USER
-
- elif [[ $CN -eq "9.2" ]]; then
- read -p "Write the name of the user : " User
- sudo usermod -L $User
-
+ if [[ $CN == "9.1" ]]; then
+  read -p "Write the name of the user : " USER
+  sudo usermod -U $USER
+  echo account activated && account
+  
+ elif [[ $CN == "9.2" ]]; then
+  read -p "Write the name of the user : " User
+  sudo usermod -L $User
+  echo account disactivated && account
+  clear
+  
  else
- echo You have introduced invalid option
+  echo You have introduced invalid option
  fi
 
 elif [[ $menu -eq "10" ]]; then
