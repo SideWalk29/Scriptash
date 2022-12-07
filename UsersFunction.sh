@@ -15,8 +15,8 @@ function multi_user () {
 
 function Control_accounts () {
  echo ··································
- printf "9.1.- Unlock User account \n"
- printf "9.2.- Lock User account   \n"
+ printf "10.1.- Unlock User account \n"
+ printf "10.2.- Lock User account   \n"
  echo ..................................
 }
 
@@ -35,12 +35,13 @@ printf "| 2.- Create a new user or multi users   |\n"
 printf "| 3.- Change the user's password         |\n"
 printf "| 4.- Change the owner of the file       |\n"
 printf "| 5.- Change user default shell          |\n"
-printf "| 6.- Change user primary group          |\n"
-printf "| 7.- Change a User Name                 |\n"
-printf "| 8.- Add an user to a secondary group   |\n"
-printf "| 9.- Locking and Unlocking user account |\n"
-printf "| 10.- Exit the script                   |\n"
-printf "| 11.- Shutdown the system               |\n"
+printf "| 6.- Add new user to a primary group    |\n"
+printf "| 7.- Change user primary group          |\n"
+printf "| 8.- Change a User Name                 |\n"
+printf "| 9.- Add an user to a secondary group   |\n"
+printf "| 10.- Locking and Unlocking user account|\n"
+printf "| 11.- Exit the script                   |\n"
+printf "| 12.- Shutdown the system               |\n"
 echo    "========================================="
 read menu
 
@@ -133,38 +134,45 @@ elif [[ $menu -eq "4" ]]; then
 elif [[ $menu -eq "5" ]]; then
   clear
  read -p "Write the name of the user : " USER
- cat /etc/shells | read -p "Which one of those shells, write all the route for it : " Shell
+ cat /etc/shells
+ read -p "Which one of those shells, write all the route for it : " Shell
  sudo usermod -s $Shell $USER
 
 elif [[ $menu -eq "6" ]]; then
+ clear
+ read -p "Write the name of the new user : " USER
+ read -p "To which group are you gonna add it : " GROUP
+ sudo useradd -g $USER -G $GROUP
+
+elif [[ $menu -eq "7" ]]; then
  clear
  read -p "The name of the user : " User
  read -p "To which group you want to move it : " Group
  sudo usermod -g $Group $User
 
-elif [[ $menu -eq "7" ]]; then
+elif [[ $menu -eq "8" ]]; then
  clear
  read -p "Write the name of the user : " USER
  read -p "The new username : " New_Name
  sudo usermod -l $New_NAME $USER
 
-elif [[ $menu -eq "8" ]]; then
+elif [[ $menu -eq "9" ]]; then
  clear
  read -p "Write the name of the user : " User
  read -p "To which group you want to move it : " Group
  sudo usermod -a -G $Group $User
 
 
-elif [[ $menu -eq "9" ]]; then
+elif [[ $menu -eq "10" ]]; then
  clear
  Control_accounts
- read -p "Select which one (9.#) : " CN
- if [[ $CN == "9.1" ]]; then
+ read -p "Select which one (10.#) : " CN
+ if [[ $CN == "10.2" ]]; then
   read -p "Write the name of the user : " USER
   sudo usermod -U $USER
   echo account activated && account
   
- elif [[ $CN == "9.2" ]]; then
+ elif [[ $CN == "10.2" ]]; then
   read -p "Write the name of the user : " User
   sudo usermod -L $User
   echo account disactivated && account
@@ -174,11 +182,11 @@ elif [[ $menu -eq "9" ]]; then
   echo You have introduced invalid option
  fi
 
-elif [[ $menu -eq "10" ]]; then
+elif [[ $menu -eq "11" ]]; then
  clear
  figlet -f slant Thank you 4 using our script && sleep 3 && clear
 
-elif [[ $menu -eq "11" ]]; then
+elif [[ $menu -eq "12" ]]; then
  clear
  echo Good night
  shutdown now
